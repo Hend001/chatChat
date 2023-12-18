@@ -1,34 +1,34 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
+// import { useState } from "react";
+// import axios from "axios";
 
 const Register = () => {
-  const [inputs, setInputs] = useState({
-    username: "",
-    email: "",
-    password: "",
-    name: "",
-  });
-  const [err, setErr] = useState(null);
+  // const [inputs, setInputs] = useState({
+  //   username: "",
+  //   email: "",
+  //   password: "",
+  //   name: "",
+  // });
+  // const [err, setErr] = useState(null);
 
-  const handelClick = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post(
-        "http://localhost:4000/Backend/authentication/register",
-        inputs
-      );
-    } catch (err) {
-      setErr(err.response.data);
-    }
-  };
+  // const handelClick = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await axios.post(
+  //       "http://localhost:4000/Backend/authentication/register",
+  //       inputs
+  //     );
+  //   } catch (err) {
+  //     setErr(err.response.data);
+  //   }
+  // };
 
-  console.log(err);
+  // console.log(err);
 
-  const handelChange = (e) => {
-    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    console.log(inputs);
-  };
+  // const handelChange = (e) => {
+  //   setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  //   console.log(inputs);
+  // };
   return (
     <div className="register">
       <div className="register-card">
@@ -38,7 +38,7 @@ const Register = () => {
             Welcome to the popular social media application chat chat
           </p>
           <span className="question">Do you have an account?</span>
-          <Link to="/login">
+          <Link to="/chatChat/login">
             <button className="registerButton">Login</button>
           </Link>
         </div>
@@ -50,33 +50,31 @@ const Register = () => {
               type="text"
               placeholder="Username"
               name="username"
-              onChange={handelChange}
+              // onChange={handelChange}
             />
             <input
               className="register-input"
               type="email"
               placeholder="Email"
               name="email"
-              onChange={handelChange}
+              // onChange={handelChange}
             />
             <input
               className="register-input"
               type="password"
               placeholder="Password"
               name="password"
-              onChange={handelChange}
+              // onChange={handelChange}
             />
             <input
               className="register-input"
               type="text"
               placeholder="Name"
               name="name"
-              onChange={handelChange}
+              // onChange={handelChange}
             />
-            {err && err}
-            <button className="loginButton" onClick={handelClick}>
-              Register
-            </button>
+
+            <button className="loginButton">Register</button>
           </form>
         </div>
       </div>

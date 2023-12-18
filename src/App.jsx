@@ -1,22 +1,17 @@
 import Login from "./pages/login";
 import Register from "./pages/register";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
-  Navigate,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Navbar from "./components/Nav";
 import LeftBar from "./components/Leftbar";
 import RightBar from "./components/Rightbar";
 import Home from "./pages/home";
 
-import { useContext } from "react";
+// import { useContext } from "react";
 
-import { AuthContext } from "./context/authContext";
+// import { AuthContext } from "./context/authContext";
 
 function App() {
-  const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
 
   const Layout = () => {
     return (
@@ -33,35 +28,23 @@ function App() {
     );
   };
 
-  const ProtectedRoute = ({ children }) => {
-    if (!currentUser) {
-      return <Navigate to="/login" />;
-    }
-
-    return children;
-  };
-
   const router = createBrowserRouter([
     {
-      path: "/",
-      element: (
-        <ProtectedRoute>
-          <Layout />
-        </ProtectedRoute>
-      ),
+      path: "/chatChat/",
+      element: <Layout />,
       children: [
         {
-          path: "/",
+          path: "/chatChat/",
           element: <Home />,
         },
       ],
     },
     {
-      path: "/login",
+      path: "/chatChat/login",
       element: <Login />,
     },
     {
-      path: "/register",
+      path: "/chatChat/register",
       element: <Register />,
     },
   ]);

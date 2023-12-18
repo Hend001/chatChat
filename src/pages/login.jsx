@@ -1,10 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/authContext";
-import { useState } from "react";
+// import { useState } from "react";
 
 const Login = () => {
-  const [inputs, setInputs] = useState({
+  /*const [inputs, setInputs] = useState({
     username: "",
     password: "",
   });
@@ -15,18 +15,19 @@ const Login = () => {
 
   const handelChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  };*/
 
   const { login } = useContext(AuthContext);
 
-  const handelLogin = async (e) => {
-    e.preventDefault();
+  const handelLogin = async () => {
+    /* e.preventDefault();
     try {
       await login(inputs);
       navigate("/");
     } catch (err) {
       setErr(err.response.data);
-    }
+    }*/
+    login();
   };
 
   return (
@@ -39,7 +40,7 @@ const Login = () => {
               Welcome to the popular social media application chat chat
             </p>
             <span className="question">Don't have an account yet?</span>
-            <Link to="/register">
+            <Link to="/chatChat/register">
               <button className="registerButton">Register</button>
             </Link>
           </div>
@@ -51,16 +52,16 @@ const Login = () => {
                 type="text"
                 placeholder="Username"
                 name="username"
-                onChange={handelChange}
+                // onChange={handelChange}
               />
               <input
                 className="register-input"
                 type="password"
                 placeholder="Password"
                 name="password"
-                onChange={handelChange}
+                // onChange={handelChange}
               />
-              {err && err}
+
               <button className="loginButton" onClick={handelLogin}>
                 Login
               </button>
