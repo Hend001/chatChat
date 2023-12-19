@@ -7,7 +7,7 @@ import { AuthContext } from "../context/authContext";
 import { useContext } from "react";
 
 const LeftBar = () => {
-  const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
 
   return (
     <div className="leftBar">
@@ -15,7 +15,7 @@ const LeftBar = () => {
         <div className="menu">
           <div className="leftbar-users">
             <p>Welcome</p>
-            <span>{currentUser.name}</span>
+            <span>Emily</span>
           </div>
 
           <hr className="leftbar-hr" />

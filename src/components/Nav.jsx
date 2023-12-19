@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/authContext";
 
 const Navbar = () => {
-  const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
 
   return (
     <div className="navbar">
@@ -24,8 +24,8 @@ const Navbar = () => {
           <input className="nav-input" type="text" placeholder="search.." />
         </div>
         <div className="navbar-user">
-          <img className="nav-img" src={currentUser.profilePic} alt="" />
-          <span className="user-name-nav">{currentUser.name}</span>
+          <img className="nav-img" src="" alt="" />
+          <span className="user-name-nav">Emily</span>
         </div>
       </div>
     </div>
