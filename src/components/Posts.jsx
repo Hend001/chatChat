@@ -59,7 +59,13 @@ const Posts = () => {
   return (
     <div className="posts-bx">
       {posts.map((post) => (
-        <Post post={post} key={post.id} />
+        <Post
+          name={post.name}
+          profilepic={post.profilePic}
+          desc={post.desc}
+          img={post.img}
+          key={post.id}
+        />
       ))}
     </div>
   );
