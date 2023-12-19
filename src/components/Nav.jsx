@@ -2,8 +2,8 @@ import ContactSupportOutlinedIcon from "@mui/icons-material/ContactSupportOutlin
 import CircleNotificationsOutlinedIcon from "@mui/icons-material/CircleNotificationsOutlined";
 import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { useContext } from "react";
-import { AuthContext } from "../context/authContext";
+// import { useContext } from "react";
+// import { AuthContext } from "../context/authContext";
 
 const Navbar = () => {
   // const { currentUser } = useContext(AuthContext);
